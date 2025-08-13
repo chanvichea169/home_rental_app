@@ -174,8 +174,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             child: ClipOval(
-                              child: Image.network(
-                                'https://randomuser.me/api/portraits/men/41.jpg',
+                              child: Image.asset(
+                                "assets/images/user.png",
                                 width: 40,
                                 height: 40,
                                 fit: BoxFit.cover,
