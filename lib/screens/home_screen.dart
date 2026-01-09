@@ -73,7 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
         toolbarHeight: 140, // Adjusted height
         flexibleSpace: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+              vertical: 8.0,
+            ),
             child: Column(
               children: [
                 Row(
@@ -89,10 +92,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               isScrollControlled: true,
                               backgroundColor: Colors.transparent,
                               builder: (context) => Container(
-                                height: MediaQuery.of(context).size.height * 0.6,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.6,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                                  borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(20),
+                                  ),
                                 ),
                                 child: Column(
                                   children: [
@@ -100,7 +106,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                     Padding(
                                       padding: const EdgeInsets.all(16),
                                       child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
                                             'Your Profile',
@@ -111,7 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           IconButton(
                                             icon: Icon(Icons.close),
-                                            onPressed: () => Navigator.pop(context),
+                                            onPressed: () =>
+                                                Navigator.pop(context),
                                           ),
                                         ],
                                       ),
@@ -137,10 +145,19 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   child: Image.network(
                                                     'https://randomuser.me/api/portraits/men/41.jpg',
                                                     fit: BoxFit.cover,
-                                                    errorBuilder: (context, error, stackTrace) => Container(
-                                                      color: Colors.grey[200],
-                                                      child: Icon(Icons.person, color: Colors.grey),
-                                                    ),
+                                                    errorBuilder:
+                                                        (
+                                                          context,
+                                                          error,
+                                                          stackTrace,
+                                                        ) => Container(
+                                                          color:
+                                                              Colors.grey[200],
+                                                          child: Icon(
+                                                            Icons.person,
+                                                            color: Colors.grey,
+                                                          ),
+                                                        ),
                                                   ),
                                                 ),
                                               ),
@@ -179,10 +196,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 40,
                                 height: 40,
                                 fit: BoxFit.cover,
-                                errorBuilder: (context, error, stackTrace) => Container(
-                                  color: Colors.grey[200],
-                                  child: Icon(Icons.person, color: Colors.grey),
-                                ),
+                                errorBuilder: (context, error, stackTrace) =>
+                                    Container(
+                                      color: Colors.grey[200],
+                                      child: Icon(
+                                        Icons.person,
+                                        color: Colors.grey,
+                                      ),
+                                    ),
                               ),
                             ),
                           ),
@@ -236,11 +257,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Container(
                         height: 48,
                         decoration: BoxDecoration(
-                          color: Colors.grey[400], // Changed to light grey background
+                          color: Colors.grey[400],
+                          border: Border.all(
+                            color: Colors.grey[300]!,
+                          ), // Changed to light grey background
                           borderRadius: BorderRadius.circular(12),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
+                              color: Colors.black.withOpacity(0.1),
                               blurRadius: 8,
                               offset: const Offset(0, 4),
                             ),
@@ -248,16 +272,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: TextField(
                           decoration: InputDecoration(
-                            filled: true, // Important for background color to show
-                            fillColor: Colors.grey[200], // Match container background
-                            hintText: 'Search for properties...',
-                            hintStyle: TextStyle(color: Colors.grey[600]), // Darker hint text
-                            prefixIcon: Icon(Icons.search, color: Colors.grey[600]), // Darker icon
+                            filled:
+                                true, // Important for background color to show
+                            fillColor:
+                                Colors.grey[200], // Match container background
+                            hintText: 'Search for great places',
+                            hintStyle: TextStyle(
+                              color: Colors.grey[600],
+                            ), // Darker hint text
+                            prefixIcon: Icon(
+                              Icons.search,
+                              color: Colors.grey[600],
+                            ), // Darker icon
                             border: OutlineInputBorder(
-                              borderSide: BorderSide.none, // Remove default border
+                              borderSide:
+                                  BorderSide.none, // Remove default border
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            contentPadding: const EdgeInsets.symmetric(vertical: 14),
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 14,
+                            ),
                           ),
                         ),
                       ),
@@ -306,11 +340,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 children: [
-                  _buildCategoryItem(Icons.apartment, 'Apartment', const Color(0xFF6366F1)),
-                  _buildCategoryItem(Icons.house, 'House', const Color(0xFF10B981)),
-                  _buildCategoryItem(Icons.villa, 'Villa', const Color(0xFFF59E0B)),
-                  _buildCategoryItem(Icons.weekend, 'Condo', const Color(0xFFEC4899)),
-                  _buildCategoryItem(Icons.cabin, 'Cottage', const Color(0xFF3B82F6)),
+                  _buildCategoryItem(
+                    Icons.apartment,
+                    'Apartment',
+                    const Color(0xFF6366F1),
+                  ),
+                  _buildCategoryItem(
+                    Icons.house,
+                    'House',
+                    const Color(0xFF10B981),
+                  ),
+                  _buildCategoryItem(
+                    Icons.villa,
+                    'Villa',
+                    const Color(0xFFF59E0B),
+                  ),
+                  _buildCategoryItem(
+                    Icons.weekend,
+                    'Condo',
+                    const Color(0xFFEC4899),
+                  ),
+                  _buildCategoryItem(
+                    Icons.cabin,
+                    'Cottage',
+                    const Color(0xFF3B82F6),
+                  ),
                 ],
               ),
             ),
@@ -370,10 +424,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(height: 8),
                     const Text(
                       'Discover our curated selection of high-end properties with premium amenities',
-                      style: TextStyle(
-                        color: Colors.white70,
-                        fontSize: 14,
-                      ),
+                      style: TextStyle(color: Colors.white70, fontSize: 14),
                     ),
                     const SizedBox(height: 16),
                     SizedBox(
@@ -387,7 +438,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             image: DecorationImage(
-                              image: NetworkImage(dummyProperties[i].imageUrls.first),
+                              image: NetworkImage(
+                                dummyProperties[i].imageUrls.first,
+                              ),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -456,16 +509,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         margin: const EdgeInsets.only(right: 16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          border: Border.all(  // Changed from BorderSide to Border.all
+                          border: Border.all(
+                            // Changed from BorderSide to Border.all
                             color: Colors.greenAccent,
-                            width: 1,  // Added border width
+                            width: 1, // Added border width
                           ),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.05),
                               blurRadius: 8,
-                              spreadRadius: 1,  // Added for better shadow diffusion
+                              spreadRadius:
+                                  1, // Added for better shadow diffusion
                               offset: const Offset(0, 2),
                             ),
                           ],
@@ -494,11 +549,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 child: ClipOval(
                                   child: Image.network(
-                                    'https://randomuser.me/api/portraits/${i%2 == 0 ? 'men' : 'women'}/${i+30}.jpg',
+                                    'https://randomuser.me/api/portraits/${i % 2 == 0 ? 'men' : 'women'}/${i + 30}.jpg',
                                     fit: BoxFit.cover,
                                     errorBuilder: (_, __, ___) => Container(
                                       color: Colors.grey[200],
-                                      child: Icon(Icons.person, color: Colors.grey[400]),
+                                      child: Icon(
+                                        Icons.person,
+                                        color: Colors.grey[400],
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -514,7 +572,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      ['Alex Chen', 'Taylor Wilson', 'Jordan Lee', 'Casey Smith', 'Jamie Kim'][i],
+                                      [
+                                        'Alex Chen',
+                                        'Taylor Wilson',
+                                        'Jordan Lee',
+                                        'Casey Smith',
+                                        'Jamie Kim',
+                                      ][i],
                                       style: TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w600,
@@ -566,11 +630,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: OutlinedButton(
                                         style: OutlinedButton.styleFrom(
                                           side: BorderSide(
-                                            color: Theme.of(context).primaryColor,
+                                            color: Theme.of(
+                                              context,
+                                            ).primaryColor,
                                             width: 1,
                                           ),
                                           shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(8),
+                                            borderRadius: BorderRadius.circular(
+                                              8,
+                                            ),
                                           ),
                                           padding: EdgeInsets.zero,
                                         ),
@@ -579,7 +647,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                           'Contact',
                                           style: TextStyle(
                                             fontSize: 12,
-                                            color: Theme.of(context).primaryColor,
+                                            color: Theme.of(
+                                              context,
+                                            ).primaryColor,
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
@@ -650,10 +720,7 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 8),
           Text(
             label,
-            style: const TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
             textAlign: TextAlign.center,
           ),
         ],
@@ -707,7 +774,9 @@ class _HomeScreenState extends State<HomeScreen> {
             BottomNavigationBarItem(
               icon: Container(
                 padding: const EdgeInsets.all(4),
-                child: const Icon(Icons.home_work_outlined), // Rental-specific icon
+                child: const Icon(
+                  Icons.home_work_outlined,
+                ), // Rental-specific icon
               ),
               activeIcon: Container(
                 padding: const EdgeInsets.all(4),
@@ -749,28 +818,28 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Color(0xFF4F46E5),
-            ),
+            decoration: const BoxDecoration(color: Color(0xFF4F46E5)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CircleAvatar(
                   radius: 30,
-                  backgroundImage: NetworkImage('https://randomuser.me/api/portraits/men/41.jpg'),
+                  backgroundImage: NetworkImage(
+                    'https://randomuser.me/api/portraits/men/41.jpg',
+                  ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   'John Doe',
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    color: Colors.white,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleLarge?.copyWith(color: Colors.white),
                 ),
                 Text(
                   'john.doe@example.com',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: Colors.white70,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: Colors.white70),
                 ),
               ],
             ),
@@ -821,10 +890,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
-                  child: Image.network(
-                    _bannerImages[index],
-                    fit: BoxFit.cover,
-                  ),
+                  child: Image.network(_bannerImages[index], fit: BoxFit.cover),
                 ),
               );
             },
